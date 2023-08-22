@@ -1,4 +1,12 @@
 <?php
+// This software is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Takes a Moodle XML export file of questions and exports all the
  * multiple choice questions into a csv file.
@@ -15,20 +23,6 @@
  *                     file is used, trailed by a .csv suffix.
  *         
  **/
-
-/**
- * Terminate the script with an exit code.
- * @param int $code
- * @param string $msg
- * @return void
- */
-function dieNice(int $code, string $msg) {
-    if ($code > 0) {
-        echo $msg . PHP_EOL;
-        echo 'See --help for more details' . PHP_EOL;
-    }
-    exit($code);
-}
 
 // Predefined variables.
 $infile = $outfile = null;
@@ -102,7 +96,10 @@ while ($arg = array_shift($args)) {
 
 // Start working here...
 if (!$infile) {
-    dieNice(1, 'No Moodle XML File provided');
+    dieNice(1, 'No Moodle XML File provided.');
+}
+if (!file_exists($infile)) {
+    dieNice(2, 'File ' . $infile . ' does not exist.');
 }
 if (!$data = file_get_contents($infile)) {
     dieNice(2, 'Could not read file ' . $infile);
@@ -201,4 +198,18 @@ function handler($question) {
        }
        $csvdata[] = $row;
     }
+}
+
+/**
+ * Terminate the script with an exit code.
+ * @param int $code
+ * @param string $msg
+ * @return void
+ */
+function dieNice(int $code, string $msg) {
+    if ($code > 0) {
+        echo $msg . PHP_EOL;
+        echo 'See --help for more details' . PHP_EOL;
+    }
+    exit($code);
 }
