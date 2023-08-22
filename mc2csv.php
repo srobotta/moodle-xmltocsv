@@ -51,7 +51,7 @@ while ($arg = array_shift($args)) {
             if ($echo) {
                 if (trim($line) === '**/') {
                     fclose($fp);
-                    dieNice(0, '');
+                    dieNice();
                 }
                 $line = substr($line, 3);
                 if (!empty($line)) {
@@ -65,7 +65,7 @@ while ($arg = array_shift($args)) {
                 $echo = true;
             }
         }
-        dieNice(0, '');
+        dieNice();
     }
     if ($carg === '--in') {
         $infile = $arg;
@@ -134,7 +134,6 @@ foreach ($csvdata as $line) {
     fputcsv($fout, $line, $delimiter);
 }
 fclose($fout);
-
 // Finshed working here.
 
 /**
@@ -172,7 +171,7 @@ function formatHtml(string $value): string {
  * @return void
  */
 function handler($question) {
-    global $csvdata, $keeptags, $outfile;
+    global $csvdata;
     if ((string)$question['type'] === 'multichoice') {
        $row = [];
        $row[getColIdx('name')] = trim($question->name->text ?? '');
@@ -203,10 +202,10 @@ function handler($question) {
 /**
  * Terminate the script with an exit code.
  * @param int $code
- * @param string $msg
+ * @param string|null $msg
  * @return void
  */
-function dieNice(int $code, string $msg) {
+function dieNice(int $code = 0, ?string $msg = null) {
     if ($code > 0) {
         echo $msg . PHP_EOL;
         echo 'See --help for more details' . PHP_EOL;
