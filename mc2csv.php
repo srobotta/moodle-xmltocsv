@@ -10,13 +10,18 @@
  * --keephtml          Do not strip html tags at all.
  * --keeptags 'a,b,c'  List of tags that should not be eliminated when
  *                     stripping html from the questions. The default
- *                     tags that are not purged: sub,sub,i,strong,u,img
+ *                     tags that are not purged: i,img,s,strong,sub,sub,u
  * --out filename.csv  if not provided the basefile name of the xnl
  *                     file is used, trailed by a .csv suffix.
  *         
  **/
 
-
+/**
+ * Terminate the script with an exit code.
+ * @param int $code
+ * @param string $msg
+ * @return void
+ */
 function dieNice(int $code, string $msg) {
     if ($code > 0) {
         echo $msg . PHP_EOL;
@@ -25,6 +30,7 @@ function dieNice(int $code, string $msg) {
     exit($code);
 }
 
+// Predefined variables.
 $infile = $outfile = null;
 $delimiter = ';';
 $keeptags = ['i', 'img', 's', 'strong', 'sub', 'sub', 'u'];
@@ -33,6 +39,7 @@ $striptags = true;
 $args = $_SERVER['argv'];
 array_shift($args);
 
+// Start handling the command line arguments.
 $carg = null;
 while ($arg = array_shift($args)) {
     if ($arg === '--in' || $arg === '--out' || $arg === '--keeptags' || $arg === '--delimiter') {
@@ -91,8 +98,9 @@ while ($arg = array_shift($args)) {
     }
     dieNice(1, 'invalid argument ' . $arg);
 }
+// End of handling the command line arguments.
 
-
+// Start working here...
 if (!$infile) {
     dieNice(1, 'No Moodle XML File provided');
 }
@@ -114,7 +122,6 @@ if (!$fout) {
     dieNice(4, 'Could not open ' . $outfile . ' for writing');
 }
 
-
 $cols = [];
 $csvdata = [];
 
@@ -122,6 +129,22 @@ foreach ($xml->xpath('//question') as $question) {
     handler($question);
 }
 
+fputcsv($fout, $cols, $delimiter);
+foreach ($csvdata as $line) {
+    while (count($line) < count($cols)) {
+        $line[] = '';
+    }
+    fputcsv($fout, $line, $delimiter);
+}
+fclose($fout);
+
+// Finshed working here.
+
+/**
+ * Get column number for a column name.
+ * @param string $name
+ * @return int
+ */
 function getColIdx(string $name): int {
     global $cols;
     foreach ($cols as $i => $col) {
@@ -133,6 +156,11 @@ function getColIdx(string $name): int {
     return count($cols) - 1;
 }
 
+/**
+ * Format/strip html tags from a value.
+ * @param string $value
+ * @return string
+ */
 function formatHtml(string $value): string {
     global $striptags, $keeptags;
     if ($striptags) {
@@ -141,6 +169,11 @@ function formatHtml(string $value): string {
     return $value;
 }
 
+/**
+ * Handler function that (in this case) handles the mc questions.
+ * @param $question
+ * @return void
+ */
 function handler($question) {
     global $csvdata, $keeptags, $outfile;
     if ((string)$question['type'] === 'multichoice') {
@@ -169,11 +202,3 @@ function handler($question) {
        $csvdata[] = $row;
     }
 }
-fputcsv($fout, $cols, $delimiter);
-foreach ($csvdata as $line) {
-    while (count($line) < count($cols)) {
-        $line[] = '';
-    }
-    fputcsv($fout, $line, $delimiter);
-}
-fclose($fout);
