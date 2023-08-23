@@ -19,8 +19,8 @@
  * --keeptags 'a,b,c'  List of tags that should not be eliminated when
  *                     stripping html from the questions. The default
  *                     tags that are not purged: i,img,s,strong,sub,sub,u
- * --out filename.csv  if not provided the basefile name of the xnl
- *                     file is used, trailed by a .csv suffix.
+ * --out filename.csv  if not provided the base name of the xml file is
+ *                     used, trailed by a .csv suffix.
  *         
  **/
 
