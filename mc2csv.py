@@ -109,7 +109,6 @@ class McHandler:
             self.insertColInRow(row, 'answer_' + str(i) + '_feedback', self.formatHtml(answer.find('feedback/text').text))
             i = i + 1
 
-        #print(self.cols)
         return row
 
 class QuestionXml:
@@ -156,11 +155,12 @@ class QuestionXml:
             if p == -1:
                 p = len(self.infile)
             self.outfile = self.infile[0, p] + '.csv'
-        # and output the into the file
+        # Open the file.
         try:
             fp = open(self.outfile, "w")
         except:
             dieNice('Could not open file %s for writing result' % self.outfile)
+        # Setup the writer and put the columns (as header) and then all rows into the file.
         writer = csv.writer(fp, delimiter = self.delimiter)
         writer.writerow(self.cols)
         for row in self.rows:
