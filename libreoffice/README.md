@@ -1,12 +1,12 @@
 ## Libreoffice template and filter
 
 The files in this directory are meant to be used with Libreoffice calc to
-create multiple choice questions and to export these as XML to be impored
+create multiple choice questions and to export these as XML to be imported
 into Moodle.
 
 In Libreoffice 
 
-1. Open Libeoffice calc and go to *Tools* -> *Macros* -> *XML Filter settings*
+1. Open Libreoffice calc and go to *Tools* -> *Macros* -> *XML Filter settings*
 2. Create a new filter as shown in the screenshots, select the XSLT file from
 this project.
 3. Open the template file (.ods) and start editing your questions.

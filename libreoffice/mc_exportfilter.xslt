@@ -91,7 +91,7 @@
             </feedback>
           </answer>
           <answer format="html">
-            <xsl:attribute name="fraction"><xsl:value-of select="./table:table-cell[10]"/></xsl:attribute>
+            <xsl:attribute name="fraction">
             <text>
               <xsl:call-template name="text">
                 <xsl:with-param name="content">
