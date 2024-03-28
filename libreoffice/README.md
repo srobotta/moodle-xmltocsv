@@ -18,6 +18,14 @@ This XML file can now be impored into Moodle.
 ![Filter Settings tab general](xml_filter1.png "Filter Settings tab general")
 ![Filter Settings tab transformation](xml_filter2.png "Filter Settings tab transformation")
 
+### Supported question types
+
+At the moment the export filter xslt files support:
+
+* Multiple choice questions with exact 4 options
+* True/False questions
+* [Kprime questions](https://docs.moodle.org/en/Kprime_question_type)
+
 ### Troubleshooting
 
 If the import fails for some reason:
