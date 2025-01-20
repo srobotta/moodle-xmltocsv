@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 7222249  -->
+  <question type="multichoice">
+    <name>
+      <text>Regex Chomsky grammar</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In which Chomsky's four types of grammars fall regular expressions?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<table class="wikitable sortable jquery-tablesorter">
+<thead>
+<tr>
+<th class="headerSort" tabindex="0" title="Sort ascending" role="columnheader button">Grammar</th>
+<th class="headerSort" tabindex="0" title="Sort ascending" role="columnheader button">Languages</th>
+<th class="headerSort" tabindex="0" title="Sort ascending" role="columnheader button">Recognizing Automaton</th>
+<th class="headerSort" tabindex="0" title="Sort ascending" role="columnheader button">Production rules (constraints)<sup id="cite_ref-5" class="reference"><a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy#cite_note-5"><span class="cite-bracket">[</span>a<span class="cite-bracket">]</span></a></sup></th>
+<th class="headerSort" tabindex="0" title="Sort ascending" role="columnheader button">Examples<sup id="cite_ref-6" class="reference"><a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy#cite_note-6"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup><sup id="cite_ref-7" class="reference"><a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy#cite_note-7"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a title="Regular grammar" href="https://en.wikipedia.org/wiki/Regular_grammar">Type-3</a></td>
+<td><a title="Regular language" href="https://en.wikipedia.org/wiki/Regular_language">Regular</a></td>
+<td><a class="mw-redirect" title="Finite-state automaton" href="https://en.wikipedia.org/wiki/Finite-state_automaton">Finite-state automaton</a></td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>A</mi> <mo>→</mo> <mrow> <mtext>a</mtext> </mrow> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.338ex; width: 6.52ex; height: 2.176ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c5a21ff7c854fa27daf7ab3882590f938e5720e9" alt="{\displaystyle A\rightarrow {\text{a}}}" aria-hidden="true"></span><br><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>A</mi> <mo>→</mo> <mrow> <mtext>a</mtext> </mrow> <mi>B</mi> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.338ex; width: 8.284ex; height: 2.176ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8a487d4dba9e9959ea3a34e06b5e5677c8eff4d4" alt="{\displaystyle A\rightarrow {\text{a}}B}" aria-hidden="true"></span> (right regular)<br>or<br><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>A</mi> <mo>→</mo> <mrow> <mtext>a</mtext> </mrow> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.338ex; width: 6.52ex; height: 2.176ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c5a21ff7c854fa27daf7ab3882590f938e5720e9" alt="{\displaystyle A\rightarrow {\text{a}}}" aria-hidden="true"></span><br><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>A</mi> <mo>→</mo> <mi>B</mi> <mrow> <mtext>a</mtext> </mrow> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.338ex; width: 8.284ex; height: 2.176ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0cf097e6b24fb957809fa789499c185a1816603b" alt="{\displaystyle A\rightarrow B{\text{a}}}" aria-hidden="true"></span> (left regular)</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>L</mi> <mo>=</mo> <mo>{</mo> <msup> <mi>a</mi> <mrow> <mi>n</mi> </mrow> </msup> <mrow> <mo>|</mo> </mrow> <mi>n</mi> <mo>&gt;</mo> <mn>0</mn> <mo>}</mo> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 15.757ex; height: 2.843ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/19f838830e708f8368e1d0a9200c18d94257dcd0" alt="{\displaystyle L=\{a^{n}|n&gt;0\}}" aria-hidden="true"></span></td>
+</tr>
+<tr>
+<td><a title="Context-free grammar" href="https://en.wikipedia.org/wiki/Context-free_grammar">Type-2</a></td>
+<td><a title="Context-free language" href="https://en.wikipedia.org/wiki/Context-free_language">Context-free</a></td>
+<td>Non-deterministic <a title="Pushdown automaton" href="https://en.wikipedia.org/wiki/Pushdown_automaton">pushdown automaton</a></td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>A</mi> <mo>→</mo> <mi>α</mi> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.338ex; width: 6.845ex; height: 2.176ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/13dc432701b1477bc9ba32b0d71c58ecf2d44d9e" alt="{\displaystyle A\rightarrow \alpha }" aria-hidden="true"></span></td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>L</mi> <mo>=</mo> <mo>{</mo> <msup> <mi>a</mi> <mrow> <mi>n</mi> </mrow> </msup> <msup> <mi>b</mi> <mrow> <mi>n</mi> </mrow> </msup> <mrow> <mo>|</mo> </mrow> <mi>n</mi> <mo>&gt;</mo> <mn>0</mn> <mo>}</mo> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 17.973ex; height: 2.843ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dfafe0fa14e5249f492f5cbde42062ba4904d56f" alt="{\displaystyle L=\{a^{n}b^{n}|n&gt;0\}}" aria-hidden="true"></span></td>
+</tr>
+<tr>
+<td><a title="Context-sensitive grammar" href="https://en.wikipedia.org/wiki/Context-sensitive_grammar">Type-1</a></td>
+<td><a title="Context-sensitive language" href="https://en.wikipedia.org/wiki/Context-sensitive_language">Context-sensitive</a></td>
+<td><a title="Linear bounded automaton" href="https://en.wikipedia.org/wiki/Linear_bounded_automaton">Linear-bounded non-deterministic Turing machine</a></td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>α</mi> <mi>A</mi> <mi>β</mi> <mo>→</mo> <mi>α</mi> <mi>γ</mi> <mi>β</mi> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 12.259ex; height: 2.676ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1173552bcbf68bb06baf9b0a2f543dbc845caefd" alt="{\displaystyle \alpha A\beta \rightarrow \alpha \gamma \beta }" aria-hidden="true"></span></td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>L</mi> <mo>=</mo> <mo>{</mo> <msup> <mi>a</mi> <mrow> <mi>n</mi> </mrow> </msup> <msup> <mi>b</mi> <mrow> <mi>n</mi> </mrow> </msup> <msup> <mi>c</mi> <mrow> <mi>n</mi> </mrow> </msup> <mrow> <mo>|</mo> </mrow> <mi>n</mi> <mo>&gt;</mo> <mn>0</mn> <mo>}</mo> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 20.198ex; height: 2.843ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2bb63b71ffcba840f36e802aafe4c9951cf9ec38" alt="{\displaystyle L=\{a^{n}b^{n}c^{n}|n&gt;0\}}" aria-hidden="true"></span></td>
+</tr>
+<tr>
+<td><a title="Unrestricted grammar" href="https://en.wikipedia.org/wiki/Unrestricted_grammar">Type-0</a></td>
+<td><a title="Recursively enumerable language" href="https://en.wikipedia.org/wiki/Recursively_enumerable_language">Recursively enumerable</a></td>
+<td><a title="Turing machine" href="https://en.wikipedia.org/wiki/Turing_machine">Turing machine</a></td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>γ</mi> <mo>→</mo> <mi>α</mi> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 6.364ex; height: 2.343ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/902fc01e3f2cc85935e36efe834b543eb6b19d5b" alt="{\displaystyle \gamma \rightarrow \alpha }" aria-hidden="true"></span> (<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>γ</mi> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 1.262ex; height: 2.176ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a223c880b0ce3da8f64ee33c4f0010beee400b1a" alt="{\displaystyle \gamma }" aria-hidden="true"></span> non-empty)</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mi>L</mi> <mo>=</mo> <mo>{</mo> <mi>w</mi> <mrow> <mo>|</mo> </mrow> <mi>w</mi> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 9.819ex; height: 2.843ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/46f75a36ee91fb70c39b78145c087df4abdb1035" alt="{\displaystyle L=\{w|w}" aria-hidden="true"></span> describes a terminating Turing machine<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math> <semantics> <mrow> <mstyle> <mo>}</mo> </mstyle> </mrow> </semantics> </math></span><img class="mwe-math-fallback-image-inline mw-invert skin-invert" style="vertical-align: -0.838ex; width: 1.162ex; height: 2.843ex;" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2cf208e5d370391e66767f13641bd5ee6ad93825" alt="{\displaystyle \}}" aria-hidden="true"></span></td>
+</tr>
+</tbody>
+</table>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>none</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text><![CDATA[<p>Die Antwort ist richtig.</p>]]></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text><![CDATA[<p>Die Antwort ist teilweise richtig.</p>]]></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[<p>Die Antwort ist falsch.</p>]]></text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Grammar Type-0</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Grammar Type-1</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Grammar Type-2</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Grammar Type-3</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

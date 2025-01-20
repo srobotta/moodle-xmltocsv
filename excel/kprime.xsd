@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="quiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="question" type="kprime" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Question">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="text" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="questiontext">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="text" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="format" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generalfeedback">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="text" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="format" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defaultgrade" type="xs:decimal"/>
+      <xs:element name="penalty" type="xs:decimal"/>
+      <xs:element name="hidden" type="xs:integer"/>
+      <xs:element name="idnumber" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="kprime">
+    <xs:complexContent>
+      <xs:extension base="Question">
+        <xs:sequence>
+          <xs:element name="scoringmethod">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="shuffleanswers" type="xs:boolean"/>
+          <xs:element name="numberofrows" type="xs:integer"/>
+          <xs:element name="numberofcolumns" type="xs:integer"/>
+          <xs:element name="row" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="optiontext">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="text" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:attribute name="format" type="xs:string" use="required"/>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="feedbacktext">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="text" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:attribute name="format" type="xs:string" use="required"/>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="number" type="xs:integer" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="column" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="responsetext">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="text" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:attribute name="format" type="xs:string" use="required"/>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="number" type="xs:integer" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="weight" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:decimal"/>
+              </xs:sequence>
+              <xs:attribute name="rownumber" type="xs:integer" use="required"/>
+              <xs:attribute name="columnnumber" type="xs:integer" use="required"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="formattedText">
+    <xs:sequence>
+      <xs:element name="text" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="format" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:schema>
