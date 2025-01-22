@@ -55,4 +55,17 @@ it is fool proof to use by an inexperienced user.
 Also there might be the option to have some Visual Basic programming in order
 to have an in-Excel solution without any other software dependency.
 
+### Python script
+
+The `xls2xml.py` can read an Excel file and outputs it to a xml file. The
+`questions.xls` is an example where questions can be added in rows. The
+Python script relies on the column order provided in that Excel file.
+
+Before the script can be used, the depencencies must be installed. This is
+mainly [Spire.Xls](https://pypi.org/project/Spire.Xls/) which is done via:
+
+```
+pip install spire.xls
+```
+
 
